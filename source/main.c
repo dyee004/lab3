@@ -11,13 +11,16 @@
 #ifdef _SIMULATE_
 #include "simAVRHeader.h"
 #endif
+unsigned char GetBit(unsigned char x, unsigned char y) {
+	return ((x & (0x01 << y)) != 0);
+}
 
 int main(void) {
     /* Insert DDR and PORT initializations */
 
     /* Insert your solution below */
     while (1) {
-
+	
     }
     return 1;
 }
