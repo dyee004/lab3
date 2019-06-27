@@ -16,11 +16,26 @@ unsigned char GetBit(unsigned char x, unsigned char y) {
 }
 
 int main(void) {
-    /* Insert DDR and PORT initializations */
-
-    /* Insert your solution below */
-    while (1) {
-	
+  	DDRA = 0x00; PORTA = 0xFF;
+	DDRB = 0x00; PORTB = 0xFF;
+	DDRC = 0xFF; PORTC = 0x00;
+	unsigned char tmpA = PINA;
+	unsigned char tmpB = PINB;
+	unsigned char incrementor = 0;
+    while (1) 
+    {
+	incrementor = 0;
+	for (unsigned char i = 0; i < 8; i ++ ){
+		if(GetBit(tmpA,i)){
+			incrementor = incrementor + 1;
+		}
+	}
+	for (unsigned char j = 0; j < 8; j ++ ){
+		if(GetBit(tmpB,j)){
+			incrementor = incrementor + 1;
+		}
+	}
+	PORTC = incrementor;
     }
-    return 1;
+	return 1;
 }
