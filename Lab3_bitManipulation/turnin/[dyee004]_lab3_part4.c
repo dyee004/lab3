@@ -19,10 +19,10 @@ int main(void) {
     DDRA = 0x00; PORTA = 0xFF;
     DDRB = 0xFF; PORTB = 0x00;
     DDRC = 0xFF; PORTC = 0x00;
-    unsigned upperA = 0;
-    unsigned lowerA = 0;
-    unsigned tmpB = 0;
-    unsigned tmpC = 0;
+    unsigned char upperA = 0;
+    unsigned char lowerA = 0;
+    unsigned char tmpB = 0;
+    unsigned char tmpC = 0;
     /* Insert your solution below */
     while (1) {
         upperA = PINA & 0xF0;
